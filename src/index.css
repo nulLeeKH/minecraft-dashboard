@@ -1,0 +1,26 @@
+.service-status {
+    text-align:center;
+    width:90%;
+    margin:auto;
+}
+
+.service-status-container {
+    text-align:center;
+    margin:auto;
+    float:left;
+    width:9%;
+}
+
+.service-status-element {
+    text-align:center;
+    margin:auto;
+    color:red;
+    font-size: 9px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-decoration:none;
+}
+
+.service-status-image {
+    text-align:center;
+    margin:auto;
+}
