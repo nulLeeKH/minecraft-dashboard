@@ -59,4 +59,8 @@ function loadStatus() {
         })
 }
 
-loadStatus()
+function Init() {
+    setInterval(loadStatus, 1000)
+}
+
+Init();
