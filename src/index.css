@@ -7,7 +7,7 @@
 .service-status-container {
     text-align:center;
     margin:auto;
-    float:left;
+    display: inline-block;
     width:9%;
 }
 
