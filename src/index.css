@@ -44,3 +44,17 @@
     display: inline-block;
     text-align:center;
 }
+
+.user-lookup-skin {
+    width:45%;
+    display: inline-block;
+}
+
+.user-lookup-history-container {
+    width:45%;
+    height: 450px;
+    padding:3px;
+    display: inline-block;
+    overflow-y:scroll;
+    border:1px solid #000000;
+}
