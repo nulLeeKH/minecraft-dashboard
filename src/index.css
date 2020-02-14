@@ -1,14 +1,14 @@
 .service-status {
     text-align:center;
     width:90%;
-    margin:auto;
+    margin:1%;
 }
 
 .service-status-container {
     text-align:center;
-    margin:auto;
     display: inline-block;
     width:9%;
+    margin: auto 1%;
 }
 
 .service-status-element {
