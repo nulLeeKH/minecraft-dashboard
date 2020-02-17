@@ -3,7 +3,7 @@ const form = document.querySelector(".user-lookup-nickname-form"),
 
 function handleSubmit(event) {
     event.preventDefault();
-    console.log(input.value);
+    const inputValue = input.value;
     init();
 }
 
