@@ -1,5 +1,10 @@
 const form = document.querySelector(".user-lookup-nickname-form"),
-      input = document.querySelector(".user-lookup-nickname-input");
+      input = document.querySelector(".user-lookup-nickname-input"),
+      uuid = document.querySelector(".user-lookup-uuid");
+
+function showUuid(id) {
+    uuid.value = `UUID: ${id}`;
+}
 
 function handleSubmit(event) {
     event.preventDefault();
