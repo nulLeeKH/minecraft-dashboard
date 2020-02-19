@@ -3,12 +3,22 @@ const form = document.querySelector(".user-lookup-nickname-form"),
       uuid = document.querySelector(".user-lookup-uuid");
 
 function showUuid(id) {
-    uuid.value = `UUID: ${id}`;
+    uuid.innerHTML = `UUID: ${id}`;
 }
 
 function handleSubmit(event) {
     event.preventDefault();
     const inputValue = input.value;
+    fetch(
+        `https://api.mojang.com/users/profiles/minecraft/${inputValue}`
+    )
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(json) {
+            const checkedUuid = json['id'];
+            showUuid(checkedUuid);
+        })
     init();
 }
 
