@@ -10,11 +10,9 @@ function showUuid(id) {
     uuid.innerHTML = `UUID: ${id}`;
 }
 
-function handleSubmit(event) {
-    event.preventDefault();
-    const inputValue = input.value;
+function lookup(nickname) {
     fetch(
-        `https://api.mojang.com/users/profiles/minecraft/${inputValue}`
+        `https://api.mojang.com/users/profiles/minecraft/${nickname}`
     )
         .then(function(response) {
             return response.json();
@@ -27,6 +25,13 @@ function handleSubmit(event) {
             console.log(err);
             showUuidErr();
         });
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    const inputValue = input.value;
+    lookup(inputValue);
+
     init();
 }
 
