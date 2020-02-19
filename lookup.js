@@ -2,6 +2,10 @@ const form = document.querySelector(".user-lookup-nickname-form"),
       input = document.querySelector(".user-lookup-nickname-input"),
       uuid = document.querySelector(".user-lookup-uuid");
 
+function showUuidErr() {
+    uuid.innerHTML = 'ERR: Check console for more information.';
+}
+
 function showUuid(id) {
     uuid.innerHTML = `UUID: ${id}`;
 }
@@ -19,6 +23,10 @@ function handleSubmit(event) {
             const checkedUuid = json['id'];
             showUuid(checkedUuid);
         })
+        .catch(function (err) {
+            console.log(err);
+            showUuidErr();
+        });
     init();
 }
 
