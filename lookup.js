@@ -39,8 +39,8 @@ function showUuidErr() {
     uuid.innerHTML = 'ERR: Check console for more information.';
 }
 
-function showUuid(id) {
-    uuid.innerHTML = `UUID: ${id}`;
+function showUuid(content) {
+    uuid.innerHTML = `UUID: ${content}`;
 }
 
 function lookup(nickname) {
