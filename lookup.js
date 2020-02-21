@@ -1,7 +1,33 @@
 const form = document.querySelector(".user-lookup-nickname-form"),
       input = document.querySelector(".user-lookup-nickname-input"),
       uuid = document.querySelector(".user-lookup-uuid"),
-      history = document.querySelector(".user-lookup-nickname-history");
+      history = document.querySelector(".user-lookup-nickname-history"),
+      skin = document.querySelector(".user-lookup-skin");
+
+function showSkinErr(){
+    skin.src = 'img/skin/err.png';
+}
+
+function showSkin(content) {
+    skin.src = `${content}`;
+}
+
+function lookupSkin(uuid) {
+    fetch(
+        `https://sessionserver.mojang.com/session/minecraft/profile/${uuid}`
+    )
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(json) {
+            const skinUrl = JSON.parse(atob(json['properties'][0]['value']))['textures']['SKIN']['url'];
+            showSkin(skinUrl);
+        })
+        .catch(function (err) {
+            console.log(err);
+            showSkinErr();
+        });
+}
 
 function showHistoryErr(){
     history.innerHTML = 'ERR: Check console for more information.';
@@ -54,6 +80,7 @@ function lookup(nickname) {
             const checkedUuid = json['id'];
             showUuid(checkedUuid);
             lookupNameHistory(checkedUuid);
+            lookupSkin(checkedUuid);
         })
         .catch(function (err) {
             console.log(err);
