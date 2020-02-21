@@ -53,6 +53,7 @@ function lookupNameHistory(uuid) {
             checkedHistory = checkedHistory.replace(/":"/gi, ': ');
             checkedHistory = checkedHistory.replace(/","/gi, ' | ');
             checkedHistory = checkedHistory.replace(/":/gi, ': ');
+            checkedHistory = checkedHistory.replace(/"/gi, '');
             showHistory(checkedHistory);
         })
         .catch(function (err) {
