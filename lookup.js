@@ -50,10 +50,10 @@ function lookupNameHistory(uuid) {
             checkedHistory = checkedHistory.replace('}]', '');
             checkedHistory = checkedHistory.replace(/"},{"/gi, '<br>');
             checkedHistory = checkedHistory.replace(/},{"/gi, '<br>');
-            checkedHistory = checkedHistory.replace(/":"/gi, ': ');
             checkedHistory = checkedHistory.replace(/","/gi, ' | ');
-            checkedHistory = checkedHistory.replace(/":/gi, ': ');
             checkedHistory = checkedHistory.replace(/"/gi, '');
+            checkedHistory = checkedHistory.replace(/name:/gi, '');
+            checkedHistory = checkedHistory.replace(/changedToAt:/gi, '');
             showHistory(checkedHistory);
         })
         .catch(function (err) {
